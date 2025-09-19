@@ -1,0 +1,588 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 248, 248);
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(230, 190, 106);
+    height: 120px;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px; 
+}
+
+.logo {
+    padding: 10px;
+    margin-top: 12px;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    border: solid rgb(190, 149, 60) 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.text-titre {
+    font-size: 12px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0); 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: -10px;
+}
+
+.accroche h1 {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(231, 231, 231);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+/*BOUTON FAIRE UN DON */
+
+.faire-un-don {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(230, 190, 106);
+    background-color: rgb(231,231,231);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.faire-un-don:hover {
+    box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: rgb(190, 149, 60);
+}
+
+/*BARRE DE MENU*/
+
+.barre-menu {
+    display: flex;
+    background-color: rgb(250,248,248);
+    margin: 0px;
+    padding: 10px;
+    justify-content: center;
+    border-top: 2px solid rgb(190, 149, 60);
+}
+
+.liste-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    gap: 40px;
+}
+
+
+.accueil a, .langage a, .action a,
+ .presentation a, .contact a {
+    text-decoration: none;
+    color: black;
+}
+
+.accueil, .langage, .action,
+ .presentation, .contact {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.accueil a:hover, .langage a:hover, .action a:hover,
+.presentation a:hover, .contact a:hover {
+    color: rgb(190, 149, 60);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/* MENU SOULIGNE*/
+
+/*ACCUEIL*/
+.menu-souligne-accueil {
+    position: absolute;
+    bottom: 0; /* Sous le texte */
+    left: 50%; /* Aligné à gauche */
+    width: 0; /* largeur initialement invisible */
+    height: 4px;
+    background-color: rgb(230, 190, 106);
+    transition: width 0.3s ease-in-out; /* Animation sur la largeur */
+    transform: translateX(-50%); /* pour parfaitement centrer*/
+}
+
+.liste-menu li:hover .menu-souligne-accueil {
+    width: 100%; /* S'étend à 100% lors du survol */
+    left: 50%; /* Aligne à gauche quand étendu*/
+    transform: translateX(-50%);
+}
+
+.accueil {
+    position: relative; /* Nécessaire pour positionner le soulignement sous cet élément */
+    padding: 10px 15px; /*padding vertical / padding horizontal */
+}
+
+/* langage*/
+.menu-souligne-langage {
+    position: absolute;
+    bottom: 0; /*sera sous le texte*/
+    left: 50%; /*aligné à gauche*/
+    width: 0; /* largeur de l'élément invisible*/
+    height: 4px; /*hauteur*/
+    background-color: rgb(230, 190, 106);
+    transition: width 0.3s ease-in-out; /* Animation sur la largeur*/
+    transform: translateX(-50%); /*déplace l'élément sur l'axe horizontal 
+    (l'axe X) de 50% de sa propre largeur vers la gauche*/
+}
+
+.liste-menu li:hover .menu-souligne-langage {
+    width: 100%; /*l'élément se verra entièrement au survol en largeur*/
+    left: 50%; /*aligne à gauche quand étendu*/
+    transform: translateX(-50%); 
+}
+
+.langage {
+    position: relative;
+    padding: 10px 15px; /*padding vertical / padding horizontal */
+    text-align: center;
+}
+
+/*ACTION*/
+.menu-souligne-action {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(230, 190, 106);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);   
+}
+
+.liste-menu li:hover .menu-souligne-action {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.action {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*PRESENTATION*/
+.menu-souligne-presentation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(230, 190, 106);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.liste-menu li:hover .menu-souligne-presentation {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.presentation {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*CONTACT*/
+.menu-souligne-contact {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(230, 190, 106);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.liste-menu li:hover .menu-souligne-contact {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*BANDEAU*/
+
+/*container général*/
+.bandeau-photo {
+    width: 100%;
+    height: 60%;
+    position: relative; 
+    overflow: hidden; /*cache tout dépassement del'image*/
+    background-color: rgb(230, 190, 106);
+}
+
+/*La photo*/
+
+.photo-bandeau {
+    height: 100%;
+}
+
+.photo-bandeau img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*image ajustée pour qu'elle
+    remplisse sans déformations*/
+}
+
+/*le texte de la photo*/
+.text-bandeau h3 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(170, 165, 165);
+    text-align: center;
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 80px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optionnel, pour lisibilité */
+}
+.text-bandeau h4 {
+    position: absolute;
+    bottom: 10px;  /* Positionner à 10px du bas */
+    right: 10px;  /* Positionner à 10px de la gauche */
+    color: rgb(170, 165, 165); 
+    font-size: 15px; 
+    font-weight: normal; /*annule le bold du parent*/
+    margin: 0;  /* Supprime la marge par défaut */
+}
+
+/*UL bandeau*/
+.text-bandeau ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    bottom: 5px;
+    left: 10px;
+    text-decoration: none;
+
+    width: 65%;
+    color: rgb(170, 165, 165);
+    padding-right: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.text-bandeau a {
+    color: rgb(170, 165, 165);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-bandeau a:hover {
+    text-decoration: none;
+    color: rgb(190, 149, 60);
+}
+
+/*CONTENU*/
+
+/*TEXTE HAUT*/
+.text-paragraphe {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    text-indent: 30px;
+    background-color: rgb(230, 190, 106);
+    border: 5px dashed rgb(190, 149, 60);
+}
+
+.titre-paragraphe {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*GRID*/
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+/*grid complets*/
+.grid-conference, .grid-info,
+.grid-balade, .grid-demo,
+.grid-formation, .grid-cagnotte {
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(248, 220, 160);
+    height: 400px;
+    position: relative;
+}
+
+.grid-formation {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.grid-cagnotte {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/*Grid titre*/
+.titre-conference, .titre-info,
+.titre-balade, .titre-demo,
+.titre-formation, .titre-cagnotte {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(230, 190, 106);
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+.texte-info {
+    color: black !important;
+}
+
+.text-conference, .texte-info, .text-balade,
+.text-demo, .text-formation, .text-cagnotte {
+    text-align: justify;
+    padding: 20px;
+    color: black !important;
+}
+
+/*BOUTON bas de grid */
+.bouton-conference, .bouton-info,
+.bouton-balade, .bouton-demo,
+.bouton-formation, .bouton-cagnotte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 2px;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(230, 190, 106);
+
+}
+
+.bouton-conference:hover, .bouton-info:hover,
+.bouton-balade:hover, .bouton-demo:hover,
+.bouton-formation:hover, .bouton-cagnotte:hover {
+    background-color: rgb(230, 190, 106);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+ 
+}
+
+.bouton-conference a, .bouton-info a,
+.bouton-balade a, .bouton-demo a,
+.bouton-formation a, .bouton-cagnotte a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    text-align: center;
+
+}
+
+.bouton-conference a:hover, .bouton-info a:hover,
+.bouton-balade a:hover, .bouton-demo a:hover,
+.bouton-formation a:hover, .bouton-cagnotte a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+/*placement des photos*/
+.grid-photo1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-photo1 img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.grid-photo2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 4;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-photo2 img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/*FOOTER*/
+.footer-basic {
+    padding:40px 0;
+    background-color:rgb(250, 248, 248);
+    color:#4b4c4d;
+    border-top: solid 2px rgb(190, 149, 60);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+    color: rgb(230, 190, 106);
+  }
+  
+  .footer-basic .social {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+.footer-basic .social > a {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    opacity: 0.75;
+    text-decoration: none;  
+    color: rgb(190, 149, 60);
+    font-weight: bold;
+}
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+
+ /*BOUTON FIXE "DON"*/
+ .faire-un-don2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(230, 190, 106);
+    background-color: rgb(231,231,231);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.faire-un-don2:hover {
+    box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: rgb(190, 149, 60);
+}
