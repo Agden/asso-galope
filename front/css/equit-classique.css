@@ -1,0 +1,727 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 248, 248);
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(54, 35, 119);
+    height: 120px;
+    color: rgb(194, 160, 89);
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px; 
+}
+
+.logo {
+    padding: 10px;
+    margin-top: 12px;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    border: solid rgb(0, 0, 0) 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.text-titre {
+    font-size: 12px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255); 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: -10px;
+}
+
+.accroche h1 {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(180, 162, 240);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+/*BOUTON FAIRE UN DON */
+
+.faire-un-don {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(54, 35, 119);
+    background-color: rgb(231,231,231);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.faire-un-don:hover {
+    box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: rgb(143, 123, 206);
+}
+
+/*BARRE DE MENU*/
+
+.barre-menu {
+    display: flex;
+    background-color: rgb(250,248,248);
+    margin: 0px;
+    padding: 10px;
+    justify-content: center;
+    border-top: 2px solid rgb(180, 162, 240);
+}
+
+.liste-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    gap: 40px;
+}
+
+
+.accueil a, .langage a, .action a,
+ .presentation a, .contact a {
+    text-decoration: none;
+    color: black;
+}
+
+.accueil, .langage, .action,
+ .presentation, .contact {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.accueil a:hover, .langage a:hover, .action a:hover,
+.presentation a:hover, .contact a:hover {
+    color: rgb(69, 73, 190);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/* MENU SOULIGNE*/
+
+/*ACCUEIL*/
+.menu-souligne-accueil {
+    position: absolute;
+    bottom: 0; /* Sous le texte */
+    left: 50%; /* Aligné à gauche */
+    width: 0; /* largeur initialement invisible */
+    height: 4px;
+    background-color: rgb(69, 73, 190);
+    transition: width 0.3s ease-in-out; /* Animation sur la largeur */
+    transform: translateX(-50%); /* pour parfaitement centrer*/
+}
+
+.liste-menu li:hover .menu-souligne-accueil {
+    width: 100%; /* S'étend à 100% lors du survol */
+    left: 50%; /* Aligne à gauche quand étendu*/
+    transform: translateX(-50%);
+}
+
+.accueil {
+    position: relative; /* Nécessaire pour positionner le soulignement sous cet élément */
+    padding: 10px 15px; /*padding vertical / padding horizontal */
+}
+
+/* langage*/
+.menu-souligne-langage {
+    position: absolute;
+    bottom: 0; /*sera sous le texte*/
+    left: 50%; /*aligné à gauche*/
+    width: 0; /* largeur de l'élément invisible*/
+    height: 4px; /*hauteur*/
+    background-color: rgb(69, 73, 190);
+    transition: width 0.3s ease-in-out; /* Animation sur la largeur*/
+    transform: translateX(-50%); /*déplace l'élément sur l'axe horizontal 
+    (l'axe X) de 50% de sa propre largeur vers la gauche*/
+}
+
+.liste-menu li:hover .menu-souligne-langage {
+    width: 100%; /*l'élément se verra entièrement au survol en largeur*/
+    left: 50%; /*aligne à gauche quand étendu*/
+    transform: translateX(-50%); 
+}
+
+.langage {
+    position: relative;
+    padding: 10px 15px; /*padding vertical / padding horizontal */
+    text-align: center;
+}
+
+/*ACTION*/
+.menu-souligne-action {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(69, 73, 190);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);   
+}
+
+.liste-menu li:hover .menu-souligne-action {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.action {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*PRESENTATION*/
+.menu-souligne-presentation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: rgb(69, 73, 190);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.liste-menu li:hover .menu-souligne-presentation {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.presentation {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*CONTACT*/
+.menu-souligne-contact {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color:rgb(69, 73, 190);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.liste-menu li:hover .menu-souligne-contact {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact {
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/*BANDEAU*/
+
+/*container général*/
+.bandeau-photo {
+    width: 100%;
+    height: 60%;
+    position: relative; 
+    overflow: hidden; /*cache tout dépassement del'image*/
+    background-color: rgb(54, 35, 119);
+}
+
+/*La photo*/
+
+.photo-bandeau {
+    height: 100%;
+}
+
+.photo-bandeau img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*image ajustée pour qu'elle
+    remplisse sans déformations*/
+}
+
+/*le texte de la photo*/
+.text-bandeau h3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(170, 165, 165);
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 15px;
+    padding: 80px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optionnel, pour lisibilité */
+}
+.text-bandeau h4 {
+    position: absolute;
+    bottom: 10px;  /* Positionner à 10px du bas */
+    right: 10px;  /* Positionner à 10px de la gauche */
+    color: rgb(170, 165, 165); 
+    font-size: 15px; 
+    font-weight: normal; /*annule le bold du parent*/
+    margin: 0;  /* Supprime la marge par défaut */
+}
+
+/*UL bandeau*/
+.text-bandeau ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    bottom: 5px;
+    left: 10px;
+    text-decoration: none;
+
+    width: 65%;
+    color: rgb(170, 165, 165);
+    padding-right: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.text-bandeau a {
+    color: rgb(170, 165, 165);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: color .3s ease;
+}
+
+.text-bandeau a:hover {
+    text-decoration: none;
+    color: rgb(71, 47, 150);
+    transform: scale(1.3);
+}
+
+/*BOUTON FIXE "DON"*/
+.faire-un-don2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(54, 35, 119);
+    background-color: rgb(231,231,231);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.faire-un-don2:hover {
+    box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: rgb(143, 123, 206);
+}
+
+/* MAIN */
+
+main {
+    background-color: rgb(250, 248, 248);
+    border-top: dashed 4px rgb(54, 35, 119);
+}
+
+.mini-menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    padding: .7rem;
+}
+
+.mini-menu a {
+    border: solid 4px rgb(170, 165, 165);
+    padding: .5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 550;
+    color: rgb(170, 165, 165);
+    background-color: rgb(54, 35, 119);
+    transition: transform .5s ease, color .3s ease;
+}
+
+.bi-arrow-down-short {
+    font-size: 1.3rem;
+}
+
+.mini-menu a:hover {
+    text-decoration: none;
+    color: rgb(232, 232, 232);
+    transform: scale(1.1);
+}
+
+.petite-note {
+    border-top: dashed 4px rgb(170, 165, 165);
+    border-bottom: dashed 4px rgb(170, 165, 165);
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: rgb(71, 47, 150);
+    text-align: center;
+}
+
+.bi-exclamation-triangle-fill {
+    font-size: 1.7rem;
+    color: rgb(250, 141, 9);
+}
+
+.petite-note p i {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+.all-article {
+    margin-left: 9rem;
+    margin-right: 9rem;
+}
+
+/* Les articles */
+
+.article-principal,
+.article-2 {
+    border-bottom: dashed 4px rgb(170, 165, 165);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.article-externe {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.bi-record-fill {
+    color: rgb(218, 218, 218);
+}
+
+.article-principal h2,
+.article-externe h2,
+.article-2 h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(170, 165, 165);
+    background-color: rgb(54, 35, 119);
+    font-weight: 550;
+    text-align: center;
+    padding: 1rem;
+    border: 4px solid rgb(170, 165, 165);
+}
+
+.article-principal p,
+.article-2 p {
+    padding: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    text-indent: 1rem;
+    text-align: justify;
+}
+
+.article-principal h4 {
+    text-align: center;
+    color: rgb(71, 47, 150);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 550;
+}
+
+.article-principal p b,
+.article-externe p b {
+    color: rgb(69, 73, 190);
+}
+
+.article-principal b {
+    color: rgb(69, 73, 190);
+}
+
+.article-principal ul {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.article-principal li {
+    list-style: none;
+}
+
+.bi-arrow-right-short,
+.bi-feather,
+.bi-play-circle-fill {
+    font-size: 1.4rem;
+    color: rgb(108, 76, 212);
+}
+
+.bi-shift-fill {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 2rem;
+    color: rgb(170, 165, 165);
+    transition: transform .5s ease, color .5s ease;
+}
+
+.bi-shift-fill:hover {
+    color: rgb(114, 114, 114);
+    transform: scale(1.3);
+}
+
+.article-externe p a {
+    display: inline-block;
+    color: rgb(54, 35, 119);
+    text-decoration: none;
+    transition: transform .4s ease, color .4s ease;
+}
+
+
+.article-externe p a b,
+.article-externe p a .bi {
+    color: inherit;
+}
+
+.article-externe p a:hover {
+    color: rgb(114, 114, 114);
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+
+.article-externe p {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    text-indent: 1rem;
+    text-align: justify;
+}
+
+.cadre-article {
+    display: flex;
+    flex-direction: column;
+    border: dashed rgb(114, 114, 114) 4px;
+    border-radius: 2rem;
+    margin-left: 11rem;
+    margin-right: 11rem;
+}
+
+.temoignage {
+    border: solid rgb(114, 114, 114) 3px;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 2rem;
+    color: rgb(114, 114, 114);
+}
+
+span {
+    color: rgb(224, 85, 85);
+}
+
+/* Groupe carousel */
+
+#carousel-classique {
+  width: 100%;
+  max-width: 960px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border: 4px solid rgb(170, 165, 165);
+  border-radius: 1rem;
+}
+
+#carousel-classique .carousel-item {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  background-color: rgb(53, 53, 53);
+}
+
+#carousel-classique .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/*voir l’image ENTIÈRE (avec bandes)*/
+#carousel-classique .carousel-item img.contain {
+  object-fit: contain;
+  background: rgb(54, 35, 119);
+}
+
+/* Légendes */
+#carousel-classique .carousel-caption {
+  background: rgb(164, 164, 164);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+#carousel-classique .carousel-caption h5 {
+  font-size: 1.2rem;
+  color: rgb(51, 51, 51);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 550;
+}
+
+#carousel-classique .carousel-caption p {
+  font-size: 1rem;
+  color: rgb(221, 221, 221);
+  margin: 0;
+}
+
+/* Flèches de navigation visibles sur toutes les images */
+#carousel-classique .carousel-control-prev-icon,
+#carousel-classique .carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+/* Indicateurs (puces) */
+#carousel-classique .carousel-indicators li {
+  background-color: rgb(244, 243, 243);
+}
+
+#carousel-classique .carousel-indicators .active {
+  background-color: rgb(54, 35, 119);
+}
+
+.lien-page {
+    display: inline-block;
+    color: rgb(114, 114, 114);
+    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 550;
+    transition: transform .4s ease, color .4s ease;
+}
+
+.lien-page:hover {
+    color: rgb(71, 47, 150);
+    text-decoration: none;
+    transform: scale(1.03);
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;  /* centre horizontalement */
+  margin: 2rem 0;
+}
+
+.video {
+  border: solid 6px rgb(71, 47, 150);
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+/*FOOTER*/
+.footer-basic {
+    padding:40px 0;
+    background-color:rgb(250, 248, 248);
+    color:#4b4c4d;
+    border-top: solid 2px rgb(71, 47, 150);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+  
+.footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+  
+.footer-basic li {
+    padding:0 10px;
+}
+  
+.footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+}
+  
+.footer-basic ul a:hover {
+    opacity:1;
+    color: rgb(69, 73, 190);
+}
+  
+.footer-basic .social {
+    display: flex;
+    justify-content: space-around;
+}
+  
+.footer-basic .social > a {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    opacity: 0.75;
+    text-decoration: none;  
+    color: rgb(54, 35, 119);
+    font-weight: bold;
+}
+  
+  .footer-basic .social > a:hover {
+    color: rgb(69, 73, 190);
+}
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+}
