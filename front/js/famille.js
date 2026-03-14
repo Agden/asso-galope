@@ -1,24 +1,41 @@
 const familleForm = document.getElementById('familleForm');
 
-//verification du formulaire avant envoi
 if (familleForm) {
-    //ecoute de l'evenement submit
-    familleForm.addEventListener('submit', function(event) {
-        event.preventDefault(); //empecher l'envoi par defaut
+    familleForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-        //recuperation des champs du formulaire
-        const nom = document.getElementById('nom').value;
-        const prenom = document.getElementById('prenom').value;
-        const dob = document.getElementById('dob').value;
-        const adresse = document.getElementById('adresse').value;
-        const cp = document.getElementById('cp').value;
-        const ville = document.getElementById('ville').value;
-        const telephone = document.getElementById('telephone').value;
-        const email = document.getElementById('email').value;
+        const data = {
+            nom: document.getElementById('nom').value.trim(),
+            prenom: document.getElementById('prenom').value.trim(),
+            dob: document.getElementById('dob').value.trim(),
+            adresse: document.getElementById('adresse').value.trim(),
+            cp: document.getElementById('cp').value.trim(),
+            ville: document.getElementById('ville').value.trim(),
+            telephone: document.getElementById('telephone').value.trim(),
+            email: document.getElementById('email').value.trim()
+        };
 
-        console.log({nom, prenom, dob, adresse, cp, ville, telephone, email});
-        
-        //message pour l'utilisateur
-        alert("Merci pour votre inscription comme famille d'accueil, nous vous contacterons prochainement.");
-    })
+        try {
+            const response = await fetch('/back/send-famille.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert("Merci pour votre inscription comme famille d'accueil !");
+                familleForm.reset();
+            } else {
+                alert(result.error || "Une erreur est survenue.");
+            }
+
+        } catch (error) {
+            console.error("Erreur réseau :", error);
+            alert("Erreur de connexion au serveur.");
+        }
+    });
 }

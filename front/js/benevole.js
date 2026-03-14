@@ -1,37 +1,52 @@
-// récupération du formulaire
-const benevoleForm = document.getElementById('benevoleForm');
-//verification de sécurité
-if (benevoleForm) {
+document.addEventListener('DOMContentLoaded', function () {
 
-// Ecoute de l'envoie du formulaire
-benevoleForm.addEventListener("submit", function(event) {
-    event.preventDefault(); // Empêche l'envoi classique du formulaire
+    const benevoleForm = document.getElementById('benevoleForm');
 
-    // Récupération des valeurs des champs du formulaire
-    const nom = document.getElementById('nom').value;
-    const prenom = document.getElementById('prenom').value;
-    const email = document.getElementById('email').value;
-    const dob = document.getElementById('dob').value;
-    const adresse = document.getElementById('adresse').value;
-    const cp = document.getElementById('cp').value;
-    const ville = document.getElementById('ville').value;
-    const telephone = document.getElementById('telephone').value;
-    //recuperation des checkbox
-    const choix = document.querySelectorAll('input[name="statut[]"]:checked');
-    //transformation en tableau des valeurs des checkbox
-    let resultats = [];
-    choix.forEach(function(checkbox) {
-        resultats.push(checkbox.value);
-    });
-    //verification si case cochée
-    if (resultats.length === 0) {
-        alert('Veuillez sélectionner au moins un choix');
-        return;
+    if (benevoleForm) {
+        benevoleForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Récupération des statuts cochés
+            const statuts = Array.from(
+                benevoleForm.querySelectorAll('input[name="statut[]"]:checked')
+            ).map(cb => cb.value);
+
+            if (statuts.length === 0) {
+                alert('Veuillez sélectionner au moins un statut.');
+                return;
+            }
+
+            // Objet envoyé EXACTEMENT comme pour dons
+            const data = {
+                nom: benevoleForm.nom.value,
+                prenom: benevoleForm.prenom.value,
+                dob: benevoleForm.dob.value,
+                adresse: benevoleForm.adresse.value,
+                cp: benevoleForm.cp.value,
+                ville: benevoleForm.ville.value,
+                telephone: benevoleForm.telephone.value,
+                email: benevoleForm.email.value,
+                statut: statuts
+            };
+
+            fetch('/back/send-famille.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(response => {
+                if (response.success) {
+                    alert('Merci pour votre inscription ! Nous vous contacterons bientôt.');
+                    benevoleForm.reset();
+                } else {
+                    alert(response.error || 'Erreur lors de l’envoi.');
+                }
+            })
+            .catch(() => {
+                alert('Erreur lors de l’envoi. Merci de réessayer.');
+            });
+        });
     }
-    //exemple d'affichage des données récupérées
-    console.log(resultats);
 
-    // Affichage d'un message de confirmation
-    alert("Merci pour votre inscription en tant que bénévole, nous vous contacterons bientôt !");
 });
-}

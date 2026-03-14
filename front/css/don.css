@@ -366,7 +366,6 @@ main {
     margin: 0;
 }
 
-/*test*/ 
 /* grille des “boutons” */
 
 .don-montant legend {
@@ -545,6 +544,31 @@ input::placeholder {
 .formulaire-carte button:hover {
     background-color: rgb(69, 73, 190);
     color: rgb(206, 206, 206);
+}
+
+.paiement-cb-simulation {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.btn-don-cb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: rgb(54, 35, 119);
+    color: rgb(206, 206, 206);
+    border-radius: 0.8rem;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-don-cb:hover {
+    transform: scale(1.04);
+    background-color: rgb(69, 73, 190) !important;
 }
 
 /*PARTIE DROITE*/ 
